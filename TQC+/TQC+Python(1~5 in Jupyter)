@@ -1,0 +1,2129 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 101 整數格式化輸出\n",
+    "\n",
+    "說明: \n",
+    "\n",
+    "請撰寫一程式，輸入四個整數，\n",
+    "\n",
+    "然後將這四個整數以欄寬為5、欄與欄間隔一個空白字元，\n",
+    "\n",
+    "再以每列印兩個的方式，先列印向右靠齊，再列印向左靠齊，左右皆以直線 |（Vertical bar）作為邊界。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "|   85     4|\n",
+      "|  299   478|\n",
+      "|85    4    |\n",
+      "|299   478  |\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "b = int(input())\n",
+    "c = int(input())\n",
+    "d = int(input())\n",
+    "print(\"|{0:>5d} {1:>5d}|\".format(a,b))\n",
+    "print(\"|{0:>5d} {1:>5d}|\".format(c,d))\n",
+    "print(\"|{0:<5d} {1:<5d}|\".format(a,b))\n",
+    "print(\"|{0:<5d} {1:<5d}|\".format(c,d))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 102 浮點數格式化輸出\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，輸入四個分別含有小數1到4位的浮點數，\n",
+    "\n",
+    "然後將這四個浮點數以欄寬為7、欄與欄間隔一個空白字元、每列印兩個的方式，\n",
+    "\n",
+    "先列印向右靠齊，再列印向左靠齊，左右皆以直線 |（Vertical bar）作為邊界。\n",
+    "\n",
+    "輸出浮點數到小數點後第二位。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "|  12.34  333.11|\n",
+      "| 223.56  231.33|\n",
+      "|12.34   333.11 |\n",
+      "|223.56  231.33 |\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = float(input())\n",
+    "b = float(input())\n",
+    "c = float(input())\n",
+    "d = float(input())\n",
+    "\n",
+    "print(\"|{0:>7.2f} {1:>7.2f}|\\n|{2:>7.2f} {3:>7.2f}|\".format(a,b,c,d))\n",
+    "print(\"|{0:<7.2f} {1:<7.2f}|\\n|{2:<7.2f} {3:<7.2f}|\".format(a,b,c,d))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 103 字串格式化輸出\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，輸入四個單字，\n",
+    "\n",
+    "然後將這四個單字以欄寬為10、欄與欄間隔一個空白字元、每列印兩個的方式，\n",
+    "\n",
+    "先列印向右靠齊，再列印向左靠齊，左右皆以直線 |（Vertical bar）作為邊界。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "|       how        are|\n",
+      "|       you       turn|\n",
+      "|how        are       |\n",
+      "|you        turn      |\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = input()\n",
+    "b = input()\n",
+    "c = input()\n",
+    "d = input()\n",
+    "\n",
+    "print(\"|{0:>10s} {1:>10s}|\\n|{2:>10s} {3:>10s}|\".format(a,b,c,d))\n",
+    "print(\"|{0:<10s} {1:<10s}|\\n|{2:<10s} {3:<10s}|\".format(a,b,c,d))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 104 圓形面積計算\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，輸入一圓的半徑，並加以計算此圓之面積和周長，\n",
+    "\n",
+    "最後請印出此圓的半徑（Radius）、周長（Perimeter）和面積（Area）。\n",
+    "\n",
+    "需import math模組，並使用math.pi。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Radius = 15.00\n",
+      "Perimeter = 94.25\n",
+      "Area = 706.86\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "Radius = float(input())\n",
+    "Perimeter = 2*Radius * math.pi\n",
+    "Area = Radius**2 * math.pi \n",
+    "\n",
+    "print(\"Radius = {:.2f}\".format(Radius))\n",
+    "print(\"Perimeter = {:.2f}\".format(Perimeter))\n",
+    "print(\"Area = {:.2f}\".format(Area))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 105 矩形面積計算\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，輸入兩個正數，代表一矩形之寬和高，計算並輸出此矩形之高（Height）、寬（Width）、周長（Perimeter）及面積（Area）。\n",
+    "\n",
+    "輸出浮點數到小數點後第二位。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Height = 15.00\n",
+      "Width = 22.50\n",
+      "Perimeter = 75.00\n",
+      "Area = 337.50\n"
+     ]
+    }
+   ],
+   "source": [
+    "Width = float(input())\n",
+    "Height = float(input())\n",
+    "Perimeter = 2 * (Width+Height)\n",
+    "Area = Width * Height\n",
+    "\n",
+    "print(\"Height = {:.2f}\".format(Height))\n",
+    "print(\"Width = {:.2f}\".format(Width))\n",
+    "print(\"Perimeter = {:.2f}\".format(Perimeter))\n",
+    "print(\"Area = {:.2f}\".format(Area))\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 106 公里英里時速換算\n",
+    "說明:\n",
+    "\n",
+    "假設一賽跑選手在x分y秒的時間跑完z公里，請撰寫一程式，輸入x、y、z數值，最後顯示此選手每小時的平均英哩速度（1英哩等於1.6公里）。\n",
+    "\n",
+    "提示：輸出浮點數到小數點後第一位。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Speed = 10.7\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = float(input())\n",
+    "y = float(input())\n",
+    "z = float(input())\n",
+    "\n",
+    "t = x/60 + y/3600\n",
+    "s = z/1.6\n",
+    "\n",
+    "ans = s/t\n",
+    "\n",
+    "print(\"Speed = {:.1f}\".format(ans))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 107 數值計算\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入五個數字，計算並輸出這五個數字之數值、總和及平均數。\n",
+    "\n",
+    "提示：輸出浮點數到小數點後第一位。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10.0 20.0 40.0 30.0 3.0\n",
+      "Sum = 103.0\n",
+      "Average = 20.6\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = float(input())\n",
+    "b = float(input())\n",
+    "c = float(input())\n",
+    "d = float(input())\n",
+    "e = float(input())\n",
+    "\n",
+    "Sum = a+b+c+d+e\n",
+    "Avg = Sum/5\n",
+    "\n",
+    "print(\"{0:.1f} {1:.1f} {2:.1f} {3:.1f} {4:.1f}\".format(a,b,c,d,e))\n",
+    "print(\"Sum = {:.1f}\".format(Sum))\n",
+    "print(\"Average = {:.1f}\".format(Avg))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 108 座標距離計算\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入四個數字x1、y1、x2、y2，分別代表兩個點的座標(x1, y1)、(x2, y2)。計算並輸出這兩點的座標與其歐式距離。\n",
+    "\n",
+    "兩座標的歐式距離，輸出到小數點後第四位"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(2.0,1.0)\n",
+      "(5.5,8.0)\n",
+      "Distance = 2.6926\n"
+     ]
+    }
+   ],
+   "source": [
+    "x1 = float(input())\n",
+    "x2 = float(input())\n",
+    "y1 = float(input())\n",
+    "y2 = float(input())\n",
+    "\n",
+    "distance = ((x1-x2)**2 + (y1-y2)**2)**0.5\n",
+    "\n",
+    "print(\"({0:.1f},{1:.1f})\".format(x1,x2))\n",
+    "print(\"({0:.1f},{1:.1f})\".format(y1,y2))\n",
+    "print(\"Distance = {:.4f}\".format(distance))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 109 正五邊形面積計算\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入一個正數s，代表正五邊形之邊長，計算並輸出此正五邊形之面積(Area)。\n",
+    "\n",
+    "建議使用import math模組的math.pow及math.tan\n",
+    "\n",
+    "正五邊形面積的公式：$Area = (5 * s^2)/ (4 * tan(pi / 5))$\n",
+    "\n",
+    "輸出浮點數到小數點後第四位"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Area = 139.3587\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "s = float(input())\n",
+    "area = (5*s**2)/(4*math.tan(math.pi/5))\n",
+    "\n",
+    "print(\"Area = {:.4f}\".format(area))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 110 正n邊形面積計算\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入兩個正數n、s，代表正n邊形之邊長為s，計算並輸出此正n邊形之面積（Area）。\n",
+    "\n",
+    "建議使用import math模組的math.pow及math.tan\n",
+    "\n",
+    "正n邊形面積的公式：$Area = (n * s^2)/ (4 * tan(pi/n))$\n",
+    "\n",
+    "輸出浮點數到小數點後第四"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Area = 154.5456\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "n = float(input())\n",
+    "s = float(input())\n",
+    "\n",
+    "area = (n*s**2)/(4*math.tan(math.pi/n))\n",
+    "\n",
+    "print(\"Area = {:.4f}\".format(area))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 201 偶數判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入一個正整數，然後判斷它是否為偶數（even）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "15 is not an even number.\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = int(input())\n",
+    "\n",
+    "if (num%2==0):\n",
+    "    print(\"{:} is an even number.\".format(num))\n",
+    "else:\n",
+    "    print(\"{:} is not an even number.\".format(num))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 202 倍數判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入一個正整數，然後判斷它是3或5的倍數，顯示【x is amultiple of 3.】或【x is a multiple of 5.】；\n",
+    "\n",
+    "若此數值同時為3與5的倍數，顯示【x is a multiple of 3 and 5.】；\n",
+    "\n",
+    "如此數值皆不屬於3或5的倍數，顯示【x is not amultiple of 3 or 5.】，將使用者輸入的數值代入x。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "14 is not a multiple of 3 and 5.\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = int(input())\n",
+    "\n",
+    "if(x%3==0 or x%5==0):\n",
+    "    if(x%3==0 and x%5==0):\n",
+    "        print(\"{:} is a multiple of 3 and 5.\".format(x))\n",
+    "    elif(x%5!=0):\n",
+    "        print(\"{:} is a multiple of 3.\".format(x))\n",
+    "    elif(x%3!=0):\n",
+    "        print(\"{:} is a multiple of 5.\".format(x))\n",
+    "else:\n",
+    "    print(\"{:} is not a multiple of 3 and 5.\".format(x))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 203 閏年判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入一個西元年份，\n",
+    "\n",
+    "然後判斷它是否為閏年（leap year）或平年。\n",
+    "\n",
+    "其判斷規則為：每四年一閏，每百年不閏，但每四百年也一閏。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2045 is not a leap year.\n"
+     ]
+    }
+   ],
+   "source": [
+    "year = int(input())\n",
+    "\n",
+    "if(year%4==0):\n",
+    "    if(year%100==0):\n",
+    "        if(year%400==0):\n",
+    "            print(\"{:} is a leap year.\".format(year))\n",
+    "        else:\n",
+    "            print(\"{:} is not a leap year.\".format(year))\n",
+    "    else:\n",
+    "        print(\"{:} is a leap year.\".format(year))\n",
+    "else:\n",
+    "    print(\"{:} is not a leap year.\".format(year))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 204 算術運算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入兩個整數a、b，然後再輸入一算術運算子 (+、-、*、/、//、%） ，輸出經過運算後的結果。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "250\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = eval(input())\n",
+    "b = eval(input())\n",
+    "c = input()\n",
+    "\n",
+    "if(c==\"+\"):\n",
+    "    print(a+b)\n",
+    "elif(c==\"-\"):\n",
+    "    print(a-b)\n",
+    "elif(c==\"*\"):\n",
+    "    print(a*b)\n",
+    "elif(c==\"/\"):\n",
+    "    print(a/b)\n",
+    "elif(c==\"//\"):\n",
+    "    print(a//b)\n",
+    "elif(c==\"%\"):\n",
+    "    print(a%b)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 205 字元判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入一個字元，\n",
+    "\n",
+    "判斷它是包括大、小寫的英文字母（alphabet）、數字（number）、或者其它字元（symbol）。\n",
+    "\n",
+    "例如：a為英文字母、9為數字、$為其它字元。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "aaa is a alphabet.\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = input()\n",
+    "\n",
+    "if(a.isalpha()):\n",
+    "    print(\"{:} is a alphabet.\".format(a))\n",
+    "elif(a.isdigit()):\n",
+    "    print(\"{:} is a number.\".format(a))\n",
+    "else:\n",
+    "    print(\"{:} is a symbol.\".format(a))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 206 等級判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，根據使用者輸入的分數顯示對應的等級。標準如下表所示：\n",
+    "\n",
+    "| 分數 | 等級 |\n",
+    "| ---- | ---- |\n",
+    "| 80~100 | A |\n",
+    "| 70~79 | B |\n",
+    "| 60~69 | C |\n",
+    "| <=59 | F |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "F\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "\n",
+    "if(a>=80 and a<=100):\n",
+    "    print(\"A\")\n",
+    "elif(a>=70 and a<80):\n",
+    "    print(\"B\")\n",
+    "elif(a>=60 and a<70):\n",
+    "    print(\"C\")\n",
+    "else:\n",
+    "    print(\"F\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 207 折扣方案\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，要求使用者輸入購物金額，購物金額需大於8,000（含）以上，並顯示折扣優惠後的實付金額。\n",
+    "\n",
+    "購物金額折扣方案如下表所示：\n",
+    "\n",
+    "| 金額 | 折扣 |\n",
+    "| --- | --- |\n",
+    "| 8000(含) | 以上9.5折 |\n",
+    "| 18000(含) | 以上9折 |\n",
+    "| 28000(含)\t| 以上8折 |\n",
+    "| 38000(含)\t| 以上7折 |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9500.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "\n",
+    "if(a>=38000):\n",
+    "    ans = a*0.7\n",
+    "elif(a>=28000):\n",
+    "    ans = a*0.8\n",
+    "elif(a>=18000):\n",
+    "    ans = a*0.9\n",
+    "elif(a>=8000):\n",
+    "    ans = a*0.95\n",
+    "\n",
+    "print(ans)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 208 十進位換算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入一個十進位整數num(0 ≤ num ≤ 15)，將num轉換成十六進位值。\n",
+    "\n",
+    "轉換規則 = 十進位0 ~ 9的十六進位值為其本身，十進位10 ~ 15的十六進位值為A~F。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "D\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = int(input())\n",
+    "\n",
+    "if(num<=9):\n",
+    "    print(num)\n",
+    "elif(num==10):\n",
+    "    print(\"A\")\n",
+    "elif(num==11):\n",
+    "    print(\"B\")\n",
+    "elif(num==12):\n",
+    "    print(\"C\")\n",
+    "elif(num==13):\n",
+    "    print(\"D\")\n",
+    "elif(num==14):\n",
+    "    print(\"E\")\n",
+    "elif(num==15):\n",
+    "    print(\"F\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 209 距離判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入一個點的平面座標x和y值，\n",
+    "\n",
+    "判斷此點是否與點(5, 6)的距離小於或等於15，如距離小於或等於15顯示【Inside】，反之顯示【Outside】。\n",
+    "\n",
+    "計算平面上兩點距離的公式：$\\sqrt {(x1-x2)^2 + (y1-y2)^2} $\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Inside\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = int(input())\n",
+    "y = int(input())\n",
+    "\n",
+    "a = ((x-5)**2 + (y-6)**2)**0.5\n",
+    "if(a<=15):\n",
+    "    print(\"Inside\")\n",
+    "else:\n",
+    "    print(\"Outside\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 210 三角形判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用選擇敘述撰寫一程式，讓使用者輸入三個邊長，檢查這三個邊長是否可以組成一個三角形。\n",
+    "\n",
+    "若可以，則輸出該三角形之周長；否則顯示【Invalid】。\n",
+    "\n",
+    "檢查方法 = 任意兩個邊長之總和大於第三邊長。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Invalid\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "b = int(input())\n",
+    "c = int(input())\n",
+    "\n",
+    "if(a+b>c and a+c>b and b+c>a):\n",
+    "    print(a+b+c)\n",
+    "else:\n",
+    "    print(\"Invalid\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 301 迴圈整數連加\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，讓使用者輸入兩個正整數a、b（a < b），利用迴圈計算從a開始連加到b的總和。\n",
+    "\n",
+    "例如：輸入a=1、b=100，則輸出結果為5050（1 + 2 + … + 100 = 5050）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5050\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "b = int(input())\n",
+    "num = 0\n",
+    "for i in range(a,b+1):\n",
+    "    num = num + i\n",
+    "\n",
+    "print(num)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 302 迴圈偶數連加\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，讓使用者輸入兩個正整數a、b（a < b），利用迴圈計算從a開始的偶數連加到b的總和。\n",
+    "\n",
+    "例如：輸入a=1、b=100，則輸出結果為2550（2 + 4 + … + 100 = 2550）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 69,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "327714\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "b = int(input())\n",
+    "num = 0\n",
+    "for i in range(a,b+1):\n",
+    "    if(i%2==0):\n",
+    "        num = num + i\n",
+    "\n",
+    "print(num)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 303 迴圈數值相乘\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，讓使用者輸入一個正整數（<100），然後以三角形的方式依序輸出此數的相乘結果。\n",
+    "\n",
+    "輸出欄寬為4，且需靠右對齊"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "   1\n",
+      "   2   4\n",
+      "   3   6   9\n",
+      "   4   8  12  16\n",
+      "   5  10  15  20  25\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = int(input())\n",
+    "\n",
+    "for i in range(1,num+1):\n",
+    "    for j in range(1,i+1):\n",
+    "        ans = i*j\n",
+    "        print(\"{:>4d}\".format(ans),end=\"\")\n",
+    "    print()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 304 算術運算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，讓使用者輸入一個正整數a，利用迴圈計算從1到a之間，所有5之倍數數字總和。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "50\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "num = 0\n",
+    "\n",
+    "for i in range(a+1):\n",
+    "    if(i%5==0):\n",
+    "        num = num + i\n",
+    "\n",
+    "print(num)    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 305 數字反轉\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入一個正整數，將此數值以反轉的順序輸出。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "654321\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = input()\n",
+    "\n",
+    "print(num[::-1])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 306 迴圈階乘計算\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，讓使用者輸入一個正整數n，利用迴圈計算並輸出n!的值。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "355687428096000\n"
+     ]
+    }
+   ],
+   "source": [
+    "n = int(input())\n",
+    "num = 1\n",
+    "\n",
+    "for i in range(1,n+1):\n",
+    "    num = num * i\n",
+    "\n",
+    "print(num)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 307 乘法表\n",
+    "說明:\n",
+    "\n",
+    "1.請使用迴圈敘述撰寫一程式，要求使用者輸入一個正整數n（n<10），顯示n*n乘法表。\n",
+    "\n",
+    "2.每項運算式需進行格式化排列整齊，每個運算子及運算元輸出的欄寬為2，而每項乘積輸出的欄寬為4，皆靠左對齊不跳行。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 95,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1  *  1  = 1   1  *  2  = 2   1  *  3  = 3   1  *  4  = 4   1  *  5  = 5   \n",
+      "2  *  1  = 2   2  *  2  = 4   2  *  3  = 6   2  *  4  = 8   2  *  5  = 10  \n",
+      "3  *  1  = 3   3  *  2  = 6   3  *  3  = 9   3  *  4  = 12  3  *  5  = 15  \n",
+      "4  *  1  = 4   4  *  2  = 8   4  *  3  = 12  4  *  4  = 16  4  *  5  = 20  \n",
+      "5  *  1  = 5   5  *  2  = 10  5  *  3  = 15  5  *  4  = 20  5  *  5  = 25  \n"
+     ]
+    }
+   ],
+   "source": [
+    "n = int(input())\n",
+    "\n",
+    "for i in range(1,n+1):\n",
+    "    for j in range(1,n+1):\n",
+    "        num = i*j\n",
+    "        print(\"{0:<2d} {1:<2s} {2:<2d} = {3:<4d}\".format(i,\"*\",j,num),end=\"\")\n",
+    "    print()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 308 迴圈位數加總\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，要求使用者輸入一個數字，此數字代表後面測試資料的數量。\n",
+    "\n",
+    "每一筆測試資料是一個正整數（由使用者輸入），將此正整數的每位數全部加總起來。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 96,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Sum of all digits of 7513 is 16\n",
+      "Sum of all digits of 123456789 is 45\n",
+      "Sum of all digits of 110521348351 is 34\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = eval(input())\n",
+    "\n",
+    "for i in range(num):\n",
+    "    a = input()\n",
+    "    Sum = 0\n",
+    "    for i in range(len(a)):\n",
+    "        Sum = Sum + int(a[i])\n",
+    "    print(\"Sum of all digits of {0:} is {1:}\".format(a,Sum))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 309 存款總額\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，提示使用者輸入金額（如10,000）、年收益率（如5.75），以及經過的月份數（如5），接著顯示每個月的存款總額。\n",
+    "\n",
+    "四捨五入，輸出浮點數到小數點後第二位\n",
+    "\n",
+    "假設您存款$10,000，年收益為5.75%。\n",
+    "\n",
+    "過了一個月，存款會是：10000 + 10000 * 5.75 / 1200 = 10047.92\n",
+    "\n",
+    "過了兩個月，存款會是：10047.92 + 10047.92 * 5.75 / 1200 = 10096.06\n",
+    "\n",
+    "過了三個月，存款將是：10096.06 + 10096.06 * 5.75 / 1200 = 10144.44"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 98,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Month \t Amount\n",
+      "  1 \t 60065.00\n",
+      "  2 \t 60130.07\n",
+      "  3 \t 60195.21\n",
+      "  4 \t 60260.42\n",
+      "  5 \t 60325.70\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = float(input())\n",
+    "b = float(input())\n",
+    "c = int(input())\n",
+    "\n",
+    "tmp = a\n",
+    "print(\"Month \\t Amount\")\n",
+    "for i in range(1,c+1):\n",
+    "    total = tmp + tmp*b/1200\n",
+    "    tmp = total\n",
+    "    print(\"{0:3d} \\t {1:.2f}\".format(i,total))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 310 迴圈公式計算\n",
+    "說明:\n",
+    "\n",
+    "請使用迴圈敘述撰寫一程式，讓使用者輸入正整數n(1 < n)，計算以下公式的總和並顯示結果：\n",
+    "\n",
+    "$\\frac{1}{1+\\sqrt{2}} + \\frac{1}{\\sqrt{2}+\\sqrt{3}} + \\frac{1}{\\sqrt{3}+\\sqrt{4}} + ... + \\frac{1}{\\sqrt{n-1}+\\sqrt{n}}$\n",
+    "\n",
+    "輸出結果至小數點後四位"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 103,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1.6458\n"
+     ]
+    }
+   ],
+   "source": [
+    "n = int(input())\n",
+    "\n",
+    "ans = 0 \n",
+    "for i in range(1,n):\n",
+    "    ans += 1 / ( (i**0.5) + ((i+1)**0.5) )\n",
+    "\n",
+    "print(\"{:.4f}\".format(ans))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 401 最小值\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，由使用者輸入十個數字，然後找出其最小值，最後輸出最小值。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "tmp = int(input())\n",
+    "\n",
+    "for i in range(9):\n",
+    "    num = int(input())\n",
+    "    if(num>=tmp):\n",
+    "        tmp = num\n",
+    "\n",
+    "print(tmp)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 402 不定數迴圈-最小值\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入數字，輸入的動作直到輸入值為9999才結束，然後找出其最小值，並輸出最小值。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-99\n"
+     ]
+    }
+   ],
+   "source": [
+    "L = []\n",
+    "while True:\n",
+    "    num=int(input())\n",
+    "    if(num!=9999):\n",
+    "        L.append(num)\n",
+    "    else:\n",
+    "        break\n",
+    "\n",
+    "print(min(L))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 403 倍數總和計算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入兩個正整數a、b（a<=b），\n",
+    "\n",
+    "輸出從a到b（包含a和b）之間4或9的倍數（一列輸出十個數字、欄寬為4、靠左對齊）以及倍數之個數、總和。\n",
+    "\n",
+    "輸出欄寬為4，且需靠右對齊"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4   8   9   12  16  18  20  24  27  28  \n",
+      "32  36  40  44  45  48  52  54  56  60  \n",
+      "63  64  68  72  76  80  81  84  88  90  \n",
+      "92  \n",
+      "31\n",
+      "1491\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = int(input())\n",
+    "b = int(input())\n",
+    "Sum = 0\n",
+    "L = []\n",
+    "for i in range(a,b):\n",
+    "    if(i%4==0 or i%9==0):\n",
+    "        L.append(i)\n",
+    "        print(\"{:<4d}\".format(i),end=\"\")\n",
+    "        Sum+=1\n",
+    "        if(Sum%10==0):\n",
+    "            print(\"\")\n",
+    "\n",
+    "print(\"\")\n",
+    "print(Sum)\n",
+    "print(sum(L))    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 404 數字反轉判斷\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入一個正整數，\n",
+    "\n",
+    "將此正整數以反轉的順序輸出，並判斷如輸入0，則輸出為0。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "654321\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = input()\n",
+    "\n",
+    "print(num[::-1])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 405 不定數迴圈-分數等級\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，以不定數迴圈的方式輸入一個正整數（代表分數），之後根據以下分數與GPA的對照表，印出其所對應的GPA。假設此不定數迴圈輸入9999則會結束此迴圈。\n",
+    "\n",
+    "標準如下表所示：\n",
+    "| 分数 | GPA |\n",
+    "| --- | --- |\n",
+    "| 90～100 | A |\n",
+    "| 80～89 | B |\n",
+    "| 70～79 | C |\n",
+    "| 60～69 | D |\n",
+    "| 0～59 | E |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "A\n",
+      "C\n",
+      "D\n",
+      "E\n"
+     ]
+    }
+   ],
+   "source": [
+    "while True:\n",
+    "    num = int(input())\n",
+    "    if(num==9999):\n",
+    "        break\n",
+    "    else:\n",
+    "        if(90<=num<=100):\n",
+    "            print(\"A\")\n",
+    "        elif(80<=num<90):\n",
+    "            print(\"B\")\n",
+    "        elif(70<=num<80):\n",
+    "            print(\"C\")\n",
+    "        elif(60<=num<70):\n",
+    "            print(\"D\")\n",
+    "        elif(num<60):\n",
+    "            print(\"E\")\n",
+    "            \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 406 不定數迴圈-BMI計算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，以不定數迴圈的方式輸入身高與體重，\n",
+    "\n",
+    "計算出BMI之後再根據以下對照表，印出BMI及相對應的BMI代表意義（State）。\n",
+    "\n",
+    "假設此不定數迴圈輸入-9999則會結束此迴圈。\n",
+    "\n",
+    "輸出浮點數到小數點後第二位。\n",
+    "\n",
+    "公式：\n",
+    "$BMI=体重（kg）/ 身高^2（m）$\n",
+    "\n",
+    "標準如下表所示：\n",
+    "| BMI值 | 代表意义 |\n",
+    "| --- | --- |\n",
+    "| BMI<18.5 | under weight |\n",
+    "| 18.5<=BMI<25 | normal |\n",
+    "| 25.0<=BMI<30 | over weight |\n",
+    "| 30<=BMI | fat |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "BMI:27.68\n",
+      "over weight\n",
+      "BMI:20.37\n",
+      "normal\n"
+     ]
+    }
+   ],
+   "source": [
+    "while True:\n",
+    "    h = float(input())\n",
+    "    if(h==-9999):\n",
+    "        break\n",
+    "    w = float(input())\n",
+    "    if(w==-9999):\n",
+    "        break\n",
+    "\n",
+    "    bmi = w / ((0.01*h)**2)\n",
+    "    print(\"BMI:{:.2f}\".format(bmi))\n",
+    "\n",
+    "    if(bmi<18.5):\n",
+    "        print(\"under weight\")\n",
+    "    elif(18.5<=bmi<25):\n",
+    "        print(\"normal\")\n",
+    "    elif(25.0<=bmi<30):\n",
+    "        print(\"over weight\")\n",
+    "    elif(bmi>=30):\n",
+    "        print(\"fat\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 407 不定數迴圈-閏年判斷\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，以不定數迴圈的方式讓使用者輸入西元年份，\n",
+    "\n",
+    "然後判斷它是否為閏年（leap year）或平年。\n",
+    "\n",
+    "其判斷規則如下：每四年一閏，每百年不閏，但每四百年也一閏。\n",
+    "\n",
+    "假設此不定數迴圈輸入-9999則會結束此迴圈。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2021 is not a leap year.\n",
+      "2020 is a leap year.\n",
+      "2000 is a leap year.\n",
+      "2200 is not a leap year.\n"
+     ]
+    }
+   ],
+   "source": [
+    "while True:\n",
+    "    year = int(input())\n",
+    "    if(year==-9999):\n",
+    "        break\n",
+    "    else:\n",
+    "        if(year%4==0):\n",
+    "            if(year%100==0):\n",
+    "                if(year%400==0):\n",
+    "                    print(\"{:} is a leap year.\".format(year))\n",
+    "                else:\n",
+    "                    print(\"{:} is not a leap year.\".format(year))\n",
+    "            else:\n",
+    "                print(\"{:} is a leap year.\".format(year))    \n",
+    "        else:\n",
+    "            print(\"{:} is not a leap year.\".format(year))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 408 奇偶數個數計算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入十個整數，計算並輸出偶數和奇數的個數。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Even number: 3\n",
+      "Odd number: 7\n"
+     ]
+    }
+   ],
+   "source": [
+    "even = 0\n",
+    "odd = 0\n",
+    "\n",
+    "for i in range(10):\n",
+    "    num = int(input())\n",
+    "    if(num%2==0):\n",
+    "        even+=1\n",
+    "    else:\n",
+    "        odd+=1\n",
+    "\n",
+    "print(\"Even number: {:}\".format(even))\n",
+    "print(\"Odd number: {:}\".format(odd))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 409 得票數計算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "某次選舉有兩位候選人，分別是No.1: Nami、No.2:Chopper。\n",
+    "\n",
+    "請撰寫一程式，輸入五張選票，\n",
+    "\n",
+    "輸入值如為1即表示針對1號候選人投票；\n",
+    "\n",
+    "輸入值如為2即表示針對2號候選人投票，如輸入其他值則視為廢票。\n",
+    "\n",
+    "每次投完後需印出目前每位候選人的得票數，最後印出最高票者為當選人；\n",
+    "\n",
+    "如最終計算有相同的最高票數者或無法選出最高票者，\n",
+    "\n",
+    "顯示【=> No one won the election.】。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Total votes of Np.1: Nami = 1\n",
+      "Total votes of Np.1: Chopper = 0\n",
+      "Total null votes = 1\n",
+      "Total votes of Np.1: Nami = 2\n",
+      "Total votes of Np.1: Chopper = 0\n",
+      "Total null votes = 2\n",
+      "Total votes of Np.1: Nami = 2\n",
+      "Total votes of Np.1: Chopper = 1\n",
+      "Total null votes = 3\n",
+      "Total votes of Np.1: Nami = 2\n",
+      "Total votes of Np.1: Chopper = 2\n",
+      "Total null votes = 4\n",
+      "Total votes of Np.1: Nami = 2\n",
+      "Total votes of Np.1: Chopper = 2\n",
+      "Total null votes = 5\n",
+      "=> No one won the election.\n"
+     ]
+    }
+   ],
+   "source": [
+    "nami = 0\n",
+    "chopper = 0\n",
+    "vote = 0\n",
+    "\n",
+    "for i in range(5):\n",
+    "    p = int(input())\n",
+    "    vote+=1\n",
+    "    if(p==1):\n",
+    "        nami+=1\n",
+    "        \n",
+    "    elif(p==2):\n",
+    "        chopper+=1\n",
+    "        \n",
+    "    print(\"Total votes of Np.1: Nami = {:}\".format(nami))\n",
+    "    print(\"Total votes of Np.1: Chopper = {:}\".format(chopper))\n",
+    "    print(\"Total null votes = {:}\".format(vote))\n",
+    "\n",
+    "if(nami>chopper):\n",
+    "    print(\"=> No.1: Nami won the election.\")\n",
+    "elif(nami<chopper):\n",
+    "    print(\"=> No.2: Chopper won the election.\")\n",
+    "else:\n",
+    "    print(\"=> No one won the election.\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 410 繪製等腰三角形\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，依照使用者輸入的n，畫出對應的等腰三角形。 輸出結果至小數點後四位"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "         \n",
+      "        *\n",
+      "       ***\n",
+      "      *****\n",
+      "     *******\n",
+      "    *********\n",
+      "   ***********\n",
+      "  *************\n",
+      " ***************\n",
+      "*****************\n"
+     ]
+    }
+   ],
+   "source": [
+    "n = int(input())\n",
+    "\n",
+    "for i in range(n+1):\n",
+    "    print(\" \"*(n-i) + \"*\"*(2*i-1))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 501 訊息顯示\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，呼叫函式compute()，\n",
+    "\n",
+    "該函式功能為讓使用者輸入系別（Department）、學號（StudentID）和姓名（Name）並顯示這些訊息。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Department:aa\n",
+      "StudentID:12345\n",
+      "Name:bob\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(a,b,c):\n",
+    "    print(\"Department:{:}\".format(a))\n",
+    "    print(\"StudentID:{:}\".format(b))\n",
+    "    print(\"Name:{:}\".format(c))\n",
+    "\n",
+    "a=input()\n",
+    "b=input()\n",
+    "c=input()\n",
+    "compute(a,b,c)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 502 乘積\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，將使用者輸入的兩個整數作為參數傳遞給一個名為compute(x, y)的函式，此函式將回傳x和y的乘積。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "693\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(x,y):\n",
+    "    return(x*y)\n",
+    "\n",
+    "x = int(input())\n",
+    "y = int(input())\n",
+    "print(compute(x,y))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 503 連加計算\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入兩個整數，接著呼叫函式compute()，此函式接收兩個參數a、b，並回傳從a連加到b的和。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "153\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(a,b):\n",
+    "    Sum = 0\n",
+    "    for i in range(a,b+1):\n",
+    "        Sum = Sum + i\n",
+    "\n",
+    "    return Sum\n",
+    "\n",
+    "a = int(input())\n",
+    "b = int(input())\n",
+    "print(compute(a,b))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 504 次方計算\n",
+    " \n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入兩個整數，接著呼叫函式compute()，此函式接收兩個參數a、b，並回傳$a^b$的值。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "823543\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(a,b):\n",
+    "    return a**b\n",
+    "\n",
+    "a = int(input())\n",
+    "b = int(input())\n",
+    "print(compute(a,b))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 505 依參數格式化輸出\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，將使用者輸入的三個參數，\n",
+    "\n",
+    "變數名稱分別為a（代表字元character）、x（代表個數）、y（代表列數），\n",
+    "\n",
+    "作為參數傳遞給一個名為compute()的函式，\n",
+    "\n",
+    "該函式功能為：一列印出x個a字元，總共印出y列。\n",
+    "\n",
+    "輸出的每一個字元後方有一空格。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 66,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "@ @ @ @ @ @ @ \n",
+      "@ @ @ @ @ @ @ \n",
+      "@ @ @ @ @ @ @ \n",
+      "@ @ @ @ @ @ @ \n",
+      "@ @ @ @ @ @ @ \n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(a,x,y):\n",
+    "    for i in range(y):\n",
+    "        for j in range(x):\n",
+    "            print(\"{:} \".format(a),end=\"\")\n",
+    "        print(\"\")\n",
+    "\n",
+    "a = input()\n",
+    "x = int(input())\n",
+    "y = int(input())\n",
+    "compute(a,x,y)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 506 一元二次方程式\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，將使用者輸入的三個整數\n",
+    "\n",
+    "（代表一元二次方程式 $ax^2+bx+c=0$的三個係數a、b、c）作為參數傳遞給一個名為compute()的函式，該函式回傳方程式的解，\n",
+    "\n",
+    "如無解則輸出【Your equation has noroot.】"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Your equation has no root.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(a,b,c):\n",
+    "    if(b**2-4*a*c<0):\n",
+    "        return \"Your equation has no root.\"\n",
+    "    else:\n",
+    "        ans1 = (-b+(b**2-4*a*c)**0.5) / 2*a\n",
+    "        ans2 = (-b-(b**2-4*a*c)**0.5) / 2*a\n",
+    "        return \"{},{}\".format(ans1,ans2)\n",
+    "\n",
+    "a = eval(input())\n",
+    "b = eval(input())\n",
+    "c = eval(input())\n",
+    "print(compute(a,b,c))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 507 質數\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入一個整數x，並將x傳遞給名為compute()的函式，\n",
+    "\n",
+    "此函式將回傳x是否為質數（Prime number）的布林值，接著再將判斷結果輸出。\n",
+    "\n",
+    "如輸入值為質數顯示【Prime】，否則顯示【Not Prime】。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Prime\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(x):\n",
+    "    if(x<=1):\n",
+    "        return \"Not Prime\"\n",
+    "    else:\n",
+    "        for i in range(2,x):\n",
+    "            if(x%i==0):\n",
+    "                return \"Not Prime\"        \n",
+    "        \n",
+    "        return \"Prime\"\n",
+    "\n",
+    "x = int(input())\n",
+    "print(compute(x))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 508 最大公因數\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入兩個正整數x、y，並將x與y傳遞給名為compute()的函式，此函式回傳x和y的最大公因數。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 94,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(x,y):\n",
+    "    z = x%y\n",
+    "    while y!=0:\n",
+    "        z=x%y\n",
+    "        x=y\n",
+    "        y=z\n",
+    "        \n",
+    "    return x\n",
+    "\n",
+    "x = int(input())\n",
+    "y = int(input())\n",
+    "print(compute(x,y))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 509 最簡分數\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，讓使用者輸入二個分數，分別是x/y和m/n（其中x、y、m、n皆為正整數），\n",
+    "\n",
+    "計算這兩個分數的和為p/q，接著將p和q傳遞給名為compute()函式，\n",
+    "\n",
+    "此函式回傳p和q的最大公因數（Greatest Common Divisor, GCD）。\n",
+    "\n",
+    "再將p和q各除以其最大公因數，最後輸出的結果必須以最簡分數表示。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 97,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1/3 + 2/7 = 13/21\n"
+     ]
+    }
+   ],
+   "source": [
+    "def compute(p,q):\n",
+    "    c=p%q\n",
+    "    while q!=0:\n",
+    "        c=p%q\n",
+    "        p=q\n",
+    "        q=c\n",
+    "\n",
+    "    return p\n",
+    "\n",
+    "x=int(input())\n",
+    "y=int(input())\n",
+    "m=int(input())\n",
+    "n=int(input())\n",
+    "\n",
+    "p = x*n + y*m\n",
+    "q = y*n\n",
+    "gcd=compute(p,q)\n",
+    "print(\"{}/{} + {}/{} = {}/{}\".format(x,y,m,n,int(p/gcd),int(q/gcd)))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 510 費氏數列\n",
+    "\n",
+    "說明:\n",
+    "\n",
+    "請撰寫一程式，計算費氏數列（Fibonacci numbers），使用者輸入一正整數num(num>=2)，\n",
+    "\n",
+    "並將它傳遞給名為compute()的函式，此函式將輸出費氏數列前num個的數值。\n",
+    "\n",
+    "費氏數列的某一項數字是其前兩項的和，而且第0項為0，第一項為1，\n",
+    "\n",
+    "表示方式如下：\n",
+    "\n",
+    "$ F_0 = 0 $\n",
+    "\n",
+    "$ F_1 = 1 $\n",
+    "\n",
+    "$ F_n = F_{n-1} + F_{n-2} $"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 106,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 "
+     ]
+    }
+   ],
+   "source": [
+    "def compute(num):\n",
+    "    k=0\n",
+    "    a=0\n",
+    "    b=1\n",
+    "    while(k<num):\n",
+    "        print(\"{} \".format(a),end=\"\")\n",
+    "        k+=1\n",
+    "        c=a+b\n",
+    "        a=b\n",
+    "        b=c \n",
+    "        \n",
+    "num=int(input())\n",
+    "compute(num)\n",
+    "    "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3.10.2 64-bit",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.2"
+  },
+  "orig_nbformat": 4,
+  "vscode": {
+   "interpreter": {
+    "hash": "7e1998ff7f8aa20ada591c520b972326324e5ea05489af9e422744c7c09f6dad"
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
